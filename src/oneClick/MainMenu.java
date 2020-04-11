@@ -9,6 +9,15 @@ public class MainMenu extends javax.swing.JFrame {
     public String username;
     public MainMenu() {
         initComponents();
+        Home home = new Home();
+        mainDesktopPane.add(home);
+        home.setVisible(true);
+        try {
+            home.setMaximum(true);
+        } catch (PropertyVetoException ex) {
+            Logger.getLogger(MainMenu.class.getName()).log(Level.SEVERE,null,ex);
+        }
+        
         //For Maximizing crrent jframe. It will appear fullscreen
         setExtendedState(MAXIMIZED_BOTH);
     }
@@ -25,6 +34,7 @@ public class MainMenu extends javax.swing.JFrame {
         truckButton = new javax.swing.JButton();
         exitButton = new javax.swing.JButton();
         changePassword = new javax.swing.JButton();
+        home = new javax.swing.JButton();
 
         jLabel1.setText("jLabel1");
 
@@ -84,6 +94,13 @@ public class MainMenu extends javax.swing.JFrame {
             }
         });
 
+        home.setText("Home");
+        home.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                homeActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -91,13 +108,14 @@ public class MainMenu extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(carButton, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                        .addComponent(truckButton, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                        .addComponent(busButton, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(bikeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                        .addComponent(exitButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                    .addComponent(changePassword))
+                    .addComponent(changePassword)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(home, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(carButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addComponent(truckButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addComponent(busButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(bikeButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addComponent(exitButton, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(mainDesktopPane)
                 .addContainerGap())
@@ -120,7 +138,9 @@ public class MainMenu extends javax.swing.JFrame {
                         .addComponent(carButton, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(31, 31, 31)
                         .addComponent(bikeButton, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 62, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
+                        .addComponent(home)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(exitButton)
                         .addGap(60, 60, 60))))
         );
@@ -211,10 +231,36 @@ public class MainMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_bikeButtonActionPerformed
 
     private void changePasswordActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_changePasswordActionPerformed
+        Home home = new Home();
+        mainDesktopPane.add(home);
+        home.setVisible(true);
+        try {
+            home.setMaximum(true);
+        } catch (PropertyVetoException ex) {
+            Logger.getLogger(MainMenu.class.getName()).log(Level.SEVERE,null,ex);
+        }
         ChangePassword changePassword = new ChangePassword();
         changePassword.setVisible(true);
         changePassword.username = this.username;
     }//GEN-LAST:event_changePasswordActionPerformed
+
+    private void homeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_homeActionPerformed
+        Home home = new Home();
+        mainDesktopPane.removeAll();
+        mainDesktopPane.add(home);
+        home.setVisible(true);
+        try {
+            home.setMaximum(true);
+        } catch (PropertyVetoException ex) {
+            Logger.getLogger(MainMenu.class.getName()).log(Level.SEVERE,null,ex);
+        }
+        try{
+           home.setSelected(true);
+       } 
+       catch (PropertyVetoException ex) {
+            Logger.getLogger(MainMenu.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_homeActionPerformed
 
     
 
@@ -224,6 +270,7 @@ public class MainMenu extends javax.swing.JFrame {
     private javax.swing.JButton carButton;
     private javax.swing.JButton changePassword;
     private javax.swing.JButton exitButton;
+    private javax.swing.JButton home;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JDesktopPane mainDesktopPane;
     private javax.swing.JButton truckButton;

@@ -38,14 +38,15 @@
           <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="changePassword" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" alignment="0" groupAlignment="1" max="-2" attributes="0">
+                      <Component id="home" alignment="0" max="32767" attributes="0"/>
                       <Component id="carButton" alignment="0" pref="0" max="32767" attributes="0"/>
                       <Component id="truckButton" alignment="0" pref="0" max="32767" attributes="0"/>
                       <Component id="busButton" alignment="0" min="-2" pref="80" max="-2" attributes="0"/>
-                      <Component id="bikeButton" pref="0" max="32767" attributes="0"/>
-                      <Component id="exitButton" max="32767" attributes="0"/>
+                      <Component id="bikeButton" alignment="0" pref="0" max="32767" attributes="0"/>
+                      <Component id="exitButton" alignment="0" max="32767" attributes="0"/>
                   </Group>
-                  <Component id="changePassword" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="mainDesktopPane" max="32767" attributes="0"/>
@@ -72,7 +73,9 @@
                       <Component id="carButton" min="-2" pref="57" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
                       <Component id="bikeButton" min="-2" pref="57" max="-2" attributes="0"/>
-                      <EmptySpace pref="62" max="32767" attributes="0"/>
+                      <EmptySpace pref="28" max="32767" attributes="0"/>
+                      <Component id="home" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Component id="exitButton" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
                   </Group>
@@ -151,6 +154,14 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="changePasswordActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="home">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Home"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="homeActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>
